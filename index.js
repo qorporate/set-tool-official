@@ -88,6 +88,7 @@ class GameManager {
         this.currentState = GameState.WAITING_FOR_TEAMS;
 
         this.initializeEventListeners();
+        this.loadGameState();
         this.updateDisplay();
     }
 
@@ -130,6 +131,7 @@ class GameManager {
             this.setupNextMatch();
         }
 
+        this.saveGameState();
         this.updateDisplay();
     }
 
@@ -145,16 +147,19 @@ class GameManager {
         }
 
         this.queue.remove(teamName);
+        this.saveGameState();
         this.updateDisplay();
     }
 
     moveTeamUp(teamName) {
         this.queue.moveUp(teamName);
+        this.saveGameState();
         this.updateDisplay();
     }
 
     moveTeamDown(teamName) {
         this.queue.moveDown(teamName);
+        this.saveGameState();
         this.updateDisplay();
     }
 
@@ -218,6 +223,7 @@ class GameManager {
             this.slotB.team.name = newName;
         }
 
+        this.saveGameState();
         this.updateDisplay();
     }
 
@@ -231,8 +237,6 @@ class GameManager {
             this.slotA.team.currentStreak++;
 
             this.slotB.team.currentStreak = 0;
-            this.queue.enqueue(this.slotB.team);
-            this.slotB.clear();
 
             this.currentState = GameState.WINNER_NEEDS_CHALLENGER;
         } else if (result === "team2") {
@@ -240,8 +244,6 @@ class GameManager {
             this.slotB.team.currentStreak++;
 
             this.slotA.team.currentStreak = 0;
-            this.queue.enqueue(this.slotA.team);
-            this.slotA.clear();
 
             // winner stays in their slot. no swap.
             this.currentState = GameState.WINNER_NEEDS_CHALLENGER;
@@ -262,6 +264,7 @@ class GameManager {
             this.currentState = GameState.WAITING_FOR_TEAMS;
         }
 
+        // we don't save state here, because the next method alters the state again
         this.setupNextMatch();
     }
 
@@ -388,6 +391,7 @@ class GameManager {
                 break;
         }
 
+        this.saveGameState();
         this.updateDisplay();
     }
 
