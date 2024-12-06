@@ -115,8 +115,8 @@ class GameManager {
 
         if (
             this.queue.items.some((team) => team.name === teamName) ||
-            this.currentTeam1?.name === teamName ||
-            this.currentTeam2?.name === teamName
+            this.slotA.team?.name === teamName ||
+            this.slotB.team?.name === teamName
         ) {
             this.showError("Team name already exists");
             return;
@@ -126,7 +126,7 @@ class GameManager {
         this.queue.enqueue(newTeam);
         input.value = "";
 
-        if (!this.currentTeam1 || !this.currentTeam2) {
+        if (!this.slotA.team || !this.slotB.team) {
             this.setupNextMatch();
         }
 
@@ -136,11 +136,11 @@ class GameManager {
     removeTeam(teamName) {
         // If the team is in the current match, we need to handle that
         if (
-            this.currentTeam1?.name === teamName ||
-            this.currentTeam2?.name === teamName
+            this.slotA.team?.name === teamName ||
+            this.slotB.team?.name === teamName
         ) {
-            this.currentTeam1 = null;
-            this.currentTeam2 = null;
+            this.slotA.team = null;
+            this.slotB.team = null;
             this.setupNextMatch();
         }
 
