@@ -238,15 +238,25 @@ class GameManager {
 
             this.slotB.team.currentStreak = 0;
 
-            this.currentState = GameState.WINNER_NEEDS_CHALLENGER;
+            if (this.queue.items.length > 0) {
+                this.queue.enqueue(this.slotB.team);
+                this.slotB.clear();
+
+                this.currentState = GameState.WINNER_NEEDS_CHALLENGER;
+            }
         } else if (result === "team2") {
             this.slotB.team.wins++;
             this.slotB.team.currentStreak++;
 
             this.slotA.team.currentStreak = 0;
 
-            // winner stays in their slot. no swap.
-            this.currentState = GameState.WINNER_NEEDS_CHALLENGER;
+            if (this.queue.items.length > 0) {
+                this.queue.enqueue(this.slotA.team);
+                this.slotA.clear();
+
+                // winner stays in their slot. no swap.
+                this.currentState = GameState.WINNER_NEEDS_CHALLENGER;
+            }
         } else if (result === "draw") {
             this.slotA.team.currentStreak = 0;
             this.slotB.team.currentStreak = 0;
