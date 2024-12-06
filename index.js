@@ -158,6 +158,33 @@ class GameManager {
         this.updateDisplay();
     }
 
+    loadGameState() {
+        const savedState = localStorage.getItem("gameState");
+        if (savedState) {
+            const state = JSON.parse(savedState);
+            this.queue.items = state.queueItems.map((item) => item);
+            this.slotA.team = state.teamInMatchA ? state.teamInMatchA : null;
+            this.slotB.team = state.teamInMatchB ? state.teamInMatchB : null;
+            this.currentState = state.currentState;
+            this.updateDisplay();
+        }
+    }
+
+    saveGameState() {
+        const state = {
+            queueItems: this.queue.items,
+            teamInMatchA: this.slotA.team,
+            teamInMatchB: this.slotB.team,
+            currentState: this.currentState,
+        };
+        localStorage.setItem("gameState", JSON.stringify(state));
+    }
+
+    resetGame() {
+        localStorage.removeItem("gameState");
+        location.reload(); // Refresh the page
+    }
+
     editTeamName(oldName) {
         const newName = prompt("Enter new team name:", oldName)
             ?.trim()
