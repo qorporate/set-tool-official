@@ -181,3 +181,9 @@ input[type="text"] {
     width: 20px;
     height: 20px;
 }
+
+.reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
