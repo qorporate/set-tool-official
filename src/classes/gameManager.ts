@@ -2,7 +2,7 @@ import { Team } from "./team";
 import { MatchSlot } from "./matchSlot";
 import { Queue } from "./queue";
 import { GameState } from "./gameState";
-import { Slot, State, MatchResult, defaultState } from "../misc";
+import { Slot, State, MatchResult } from "../misc";
 
 export class GameManager {
     slotA: MatchSlot;
@@ -19,11 +19,14 @@ export class GameManager {
         this.queue = new Queue();
         this.errorTimeout = null;
         this.currentState = GameState.WAITING_FOR_TEAMS;
+        this.loadGameState();
+        
+        // update undo stack after loading game state, to ensure current state
+        // is captured correctly
         this.undoStack = [this.captureCurrentState()];
         this.redoStack = [];
-
+        
         this.initializeEventListeners();
-        this.loadGameState();
         this.updateDisplay();
     }
 
@@ -158,7 +161,6 @@ export class GameManager {
             this.slotA.team = state.teamInMatchA ? state.teamInMatchA : null;
             this.slotB.team = state.teamInMatchB ? state.teamInMatchB : null;
             this.currentState = state.currentState;
-            this.updateDisplay();
         }
     }
 
