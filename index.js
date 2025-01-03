@@ -82,11 +82,6 @@ class GameState {
   static WINNER_NEEDS_CHALLENGER = "WINNER_NEEDS_CHALLENGER";
 }
 
-//Temp holding for info links
-class Info {
-  static feedbackform = "feedback.html";
-  static guidelink = "https://youtu.be/BddSKlv6bTo";
-}
 // src/classes/gameManager.ts
 class GameManager {
   slotA;
@@ -99,7 +94,7 @@ class GameManager {
   constructor() {
     this.slotA = new MatchSlot("A");
     this.slotB = new MatchSlot("B");
-    this.queue = new Queue();
+    this.queue = new Queue;
     this.errorTimeout = null;
     this.currentState = GameState.WAITING_FOR_TEAMS;
     this.loadGameState();
@@ -128,13 +123,14 @@ class GameManager {
     this.restoreState(stateToUndo);
   }
   deepCopyTeam(team) {
-    if (!team) return null;
+    if (!team)
+      return null;
     return {
       name: team.name,
       wins: team.wins,
       losses: team.losses,
       draws: team.draws,
-      currentStreak: team.currentStreak,
+      currentStreak: team.currentStreak
     };
   }
   showError(message) {
@@ -160,11 +156,7 @@ class GameManager {
       this.showError("Please enter a team name");
       return;
     }
-    if (
-      this.queue.items.some((team) => team.name === teamName) ||
-      this.slotA.team?.name === teamName ||
-      this.slotB.team?.name === teamName
-    ) {
+    if (this.queue.items.some((team) => team.name === teamName) || this.slotA.team?.name === teamName || this.slotB.team?.name === teamName) {
       this.showError("Team name already exists");
       return;
     }
@@ -179,10 +171,7 @@ class GameManager {
     this.updateDisplay();
   }
   removeTeam(teamName) {
-    if (
-      this.slotA.team?.name === teamName ||
-      this.slotB.team?.name === teamName
-    ) {
+    if (this.slotA.team?.name === teamName || this.slotB.team?.name === teamName) {
       this.slotA.team = null;
       this.slotB.team = null;
       this.setupNextMatch();
@@ -227,7 +216,7 @@ class GameManager {
       queueItems: this.queue.items.map((team) => this.deepCopyTeam(team)),
       teamInMatchA: this.deepCopyTeam(this.slotA.team),
       teamInMatchB: this.deepCopyTeam(this.slotB.team),
-      currentState: this.currentState,
+      currentState: this.currentState
     };
   }
   restoreState(state) {
@@ -239,26 +228,18 @@ class GameManager {
     this.updateDisplay();
   }
   resetGame() {
-    const confirmation = confirm(
-      "Are you sure you want to reset the game? This action is unrecoverable."
-    );
+    const confirmation = confirm("Are you sure you want to reset the game? This action is unrecoverable.");
     if (confirmation) {
       localStorage.removeItem("gameState");
       location.reload();
     }
   }
   editTeamName(oldName) {
-    const newName = prompt("Enter new team name:", oldName)
-      ?.trim()
-      .toUpperCase();
+    const newName = prompt("Enter new team name:", oldName)?.trim().toUpperCase();
     if (!newName || newName === oldName) {
       return;
     }
-    if (
-      this.queue.items.some((team2) => team2.name === newName) ||
-      this.slotA.team?.name === newName ||
-      this.slotB.team?.name === newName
-    ) {
+    if (this.queue.items.some((team2) => team2.name === newName) || this.slotA.team?.name === newName || this.slotB.team?.name === newName) {
       this.showError("Team name already exists");
       return;
     }
@@ -387,11 +368,6 @@ class GameManager {
     undoButton.disabled = this.undoStack.length <= 1;
     redoButton.disabled = this.redoStack.length === 0;
   }
-  openMenu() {
-    const menu = document.querySelector(".menu-modal");
-    menu.style.visibility =
-      menu.style.visibility === "visible" ? "hidden" : "visible";
-  }
   updateDisplay() {
     const matchDisplay = document.getElementById("match-display");
     if (!matchDisplay) {
@@ -414,26 +390,14 @@ class GameManager {
       }
       currentMatch.style.display = "flex";
       buttons.style.display = "flex";
-      getElementByQuerySelector(getElementById("team1"), "h2").textContent =
-        this.slotA.team.name;
-      getElementById("team1-stats").textContent = this.formatTeamStats(
-        this.slotA.team
-      );
-      getElementById("team1-streak").textContent =
-        this.slotA.team.currentStreak.toString();
-      getElementByQuerySelector(getElementById("team2"), "h2").textContent =
-        this.slotB.team.name;
-      getElementById("team2-stats").textContent = this.formatTeamStats(
-        this.slotB.team
-      );
-      getElementById("team2-streak").textContent =
-        this.slotB.team.currentStreak.toString();
-      getElementById(
-        "left-team-name"
-      ).textContent = `${this.slotA.team.name} Wins`;
-      getElementById(
-        "right-team-name"
-      ).textContent = `${this.slotB.team.name} Wins`;
+      getElementByQuerySelector(getElementById("team1"), "h2").textContent = this.slotA.team.name;
+      getElementById("team1-stats").textContent = this.formatTeamStats(this.slotA.team);
+      getElementById("team1-streak").textContent = this.slotA.team.currentStreak.toString();
+      getElementByQuerySelector(getElementById("team2"), "h2").textContent = this.slotB.team.name;
+      getElementById("team2-stats").textContent = this.formatTeamStats(this.slotB.team);
+      getElementById("team2-streak").textContent = this.slotB.team.currentStreak.toString();
+      getElementById("left-team-name").textContent = `${this.slotA.team.name} Wins`;
+      getElementById("right-team-name").textContent = `${this.slotB.team.name} Wins`;
       const existingNoMatch = matchDisplay.querySelector(".no-match");
       if (existingNoMatch) {
         existingNoMatch.remove();
@@ -488,32 +452,18 @@ class GameManager {
       const li = document.createElement("li");
       li.className = "queue-item";
       li.innerHTML = `
-            <span><b>${team.name}</b><br/><em>${this.formatTeamStats(
-        team
-      )}</em></span>
+            <span><b>${team.name}</b><br/><em>${this.formatTeamStats(team)}</em></span>
             <div class="queue-item-buttons">
-                <button class="move-button" onclick="game.moveTeamUp('${
-                  team.name
-                }')" ${index === 0 ? "disabled" : ""} aria-label="Move ${
-        team.name
-      } up">
+                <button class="move-button" onclick="game.moveTeamUp('${team.name}')" ${index === 0 ? "disabled" : ""} aria-label="Move ${team.name} up">
                     <i class="fas fa-chevron-up"></i>
                 </button>
-                <button class="move-button" onclick="game.moveTeamDown('${
-                  team.name
-                }')" ${
-        index === this.queue.items.length - 1 ? "disabled" : ""
-      } aria-label="Move ${team.name} down">
+                <button class="move-button" onclick="game.moveTeamDown('${team.name}')" ${index === this.queue.items.length - 1 ? "disabled" : ""} aria-label="Move ${team.name} down">
                     <i class="fas fa-chevron-down"></i>
                 </button>
-                <button class="edit-team-button match-team-button" onclick="game.editTeamName('${
-                  team.name
-                }')" aria-label="Edit ${team.name}">
+                <button class="edit-team-button match-team-button" onclick="game.editTeamName('${team.name}')" aria-label="Edit ${team.name}">
                     <i class="fas fa-pencil-alt"></i>
                 </button>
-                <button class="remove-team" onclick="game.removeTeam('${
-                  team.name
-                }')" aria-label="Remove ${team.name}">
+                <button class="remove-team" onclick="game.removeTeam('${team.name}')" aria-label="Remove ${team.name}">
                     <i class="fas fa-trash-alt"></i>
                 </button>
             </div>
@@ -577,4 +527,4 @@ class GameManager {
 }
 
 // src/index.ts
-var game = new GameManager();
+var game = new GameManager;
