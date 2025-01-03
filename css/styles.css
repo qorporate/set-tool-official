@@ -226,6 +226,12 @@ input[type="text"] {
     font-weight: bold;
 }
 
+/*
+  ========================================
+  UNDO / REDO
+  ========================================
+*/
+
 .undo-redo-buttons {
     display: flex;
     justify-content: center;
@@ -265,6 +271,12 @@ input[type="text"] {
     cursor: not-allowed;
 }
 
+/*
+  ========================================
+  NAVBAR
+  ========================================
+*/
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -279,6 +291,12 @@ input[type="text"] {
     text-decoration: none;
     color: black;
 }
+
+/*
+  ========================================
+  FEEDBACK PAGE
+  ========================================
+*/
 
 #feedback-form {
     max-width: 400px;
