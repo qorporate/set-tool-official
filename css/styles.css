@@ -495,50 +495,46 @@ input[type="text"] {
   ========================================
 */
 
-.guide-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 1rem;
 }
 
-.guide-section {
-    margin-bottom: 3rem;
-}
-
-.guide-header {
+.page-header {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.guide-header h1 {
+.page-header h1 {
     font-size: 2rem;
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #666;
+    margin: 0;
 }
 
 .guide-nav {
     display: flex;
-    gap: 1rem;
     justify-content: center;
+    gap: 1rem;
     margin-bottom: 2rem;
-}
-
-.guide-nav a {
-    text-decoration: none;
 }
 
 .guide-nav-button {
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
-    background: #f5f5f5;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
+    text-decoration: none;
+    color: #666;
+    background: white;
     transition: all 0.2s ease;
 }
 
 .guide-nav-button:hover {
-    background: #e0e0e0;
+    background: #eee;
 }
 
 .guide-nav-button.active {
@@ -546,13 +542,34 @@ input[type="text"] {
     color: white;
 }
 
+.guide-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    scroll-margin-top: 2rem; /* Ensures smooth scrolling with some padding */
+}
+
+/* Rest of your existing styles... */
+.section-title {
+    color: #333;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    max-width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .video-container iframe {
@@ -561,54 +578,44 @@ input[type="text"] {
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.action-list {
-    display: grid;
-    gap: 2rem;
-}
-
-.action-item {
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 1.5rem;
-}
-
-.action-item h3 {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.action-item p {
-    color: #666;
-    margin-bottom: 1rem;
-}
-
-.gif-container {
     border-radius: 4px;
-    overflow: hidden;
-    background: #f5f5f5;
 }
 
-.gif-container img {
-    width: 100%;
-    height: auto;
-    display: block;
+.demo-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.why-qset {
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+.demo-item {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 1rem;
 }
 
-.why-qset h2 {
-    color: #333;
-    margin-bottom: 1rem;
+.demo-title {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.5rem;
 }
 
-.why-qset p {
+.demo-description {
     color: #666;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.feature-list li:not(:last-child) {
+    border-bottom: 1px solid #eee;
 }
