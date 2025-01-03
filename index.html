@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Google tag (gtag.js) -->
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    "gtm.start": new Date().getTime(),
+                    event: "gtm.js",
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-M896BKDV");
+        </script>
+        <!-- End Google Tag Manager -->
+
+        <!-- Google Analytics tag (gtag.js) -->
         <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-NTF9BT1KK2"
@@ -16,13 +34,44 @@
             gtag("config", "G-NTF9BT1KK2");
         </script>
 
+        <!-- Websense -->
+        <script
+            src="https://www.websense.online/cdn/websense.js"
+            defer
+        ></script>
+
         <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Manage sets when playing sports. Add as many teams as you'd like."
+        />
+        <meta name="author" content="Ihenacho Henry, Fatogun Ibidapo" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Open Graph  -->
+        <meta property="og:title" content="Set Tracker" />
+        <meta
+            property="og:description"
+            content="Manage sets when playing sports. Add as many teams as you'd like."
+        />
+        <meta property="og:url" content="https://qballxi.com" />
+        <meta property="og:type" content="website" />
+
         <title>Set Tracker</title>
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-M896BKDV"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"
+            ></iframe
+        ></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <div class="container">
             <div class="nav-container">
                 <div class="logo">QSet</div>
@@ -56,7 +105,9 @@
                     <div class="team" id="team1">
                         <h2>Team 1</h2>
                         <p>
-                            <em><span id="team1-stats" class="stats"></span></em>
+                            <em
+                                ><span id="team1-stats" class="stats"></span
+                            ></em>
                         </p>
                         <p class="streak">
                             Streak: <span id="team1-streak">0</span>
@@ -80,7 +131,9 @@
                     <div class="team" id="team2">
                         <h2>Team 2</h2>
                         <p>
-                            <em><span id="team2-stats" class="stats"></span></em>
+                            <em
+                                ><span id="team2-stats" class="stats"></span
+                            ></em>
                         </p>
                         <p class="streak">
                             Streak: <span id="team2-streak">0</span>

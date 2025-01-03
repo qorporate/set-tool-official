@@ -102,10 +102,10 @@ class GameManager {
     this.queue = new Queue();
     this.errorTimeout = null;
     this.currentState = GameState.WAITING_FOR_TEAMS;
+    this.loadGameState();
     this.undoStack = [this.captureCurrentState()];
     this.redoStack = [];
     this.initializeEventListeners();
-    this.loadGameState();
     this.updateDisplay();
   }
   undo() {
@@ -212,7 +212,6 @@ class GameManager {
       this.slotA.team = state.teamInMatchA ? state.teamInMatchA : null;
       this.slotB.team = state.teamInMatchB ? state.teamInMatchB : null;
       this.currentState = state.currentState;
-      this.updateDisplay();
     }
   }
   saveGameState() {

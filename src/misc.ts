@@ -10,13 +10,6 @@ export interface State {
     currentState: GameState;
 }
 
-export const defaultState: State = {
-    queueItems: [],
-    teamInMatchA: null,
-    teamInMatchB: null,
-    currentState: GameState.WAITING_FOR_TEAMS,
-};
-
 export enum MatchResult {
     Team1 = "team1",
     Team2 = "team2",
