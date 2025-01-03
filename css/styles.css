@@ -273,50 +273,50 @@ input[type="text"] {
     align-items: center;
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
-  }
+}
 
-  .nav-container .logo {
+.nav-container .logo {
     font-size: 1.5rem;
     font-weight: bold;
-  }
+}
 
-  .breadcrumb {
+.breadcrumb {
     display: flex;
     gap: 5px;
     font-size: 0.9rem;
     color: #555;
     flex-direction: row;
-  }
+}
 
-  .breadcrumb a {
+.breadcrumb a {
     text-decoration: none;
-    color: #007BFF;
-  }
+    color: #007bff;
+}
 
-  .breadcrumb a:hover {
+.breadcrumb a:hover {
     text-decoration: underline;
-  }
+}
 
-  .breadcrumb span {
+.breadcrumb span {
     color: #555;
-  }
+}
 
-  .menu-button {
+.menu-button {
     background-color: transparent;
-  }
+}
 
-  .menu-button  .menu{
+.menu-button .menu {
     height: 20px;
     width: 20px;
-  }
+}
 
-  .menu-modal{
+.menu-modal {
     display: flex;
     flex-direction: row;
     width: 100px;
     height: 400px;
-    background-color:rgb(22, 22, 22);
-    position:fixed;
+    background-color: rgb(22, 22, 22);
+    position: fixed;
     align-items: flex-end;
     justify-content: space-evenly;
     visibility: hidden;
@@ -327,47 +327,69 @@ input[type="text"] {
 #feedback-form {
     max-width: 400px;
     margin: 0 auto;
+    margin-top: 1rem;
     background: #fff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  #feedback-form h2 {
+#feedback-form h2 {
     margin-bottom: 15px;
     font-size: 24px;
     color: #333;
-  }
+}
 
-  #feedback-form label {
+#feedback-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-  }
+}
 
-  #feedback-form input,
-  #feedback-form textarea,
-  #feedback-form button {
+#feedback-form input,
+#feedback-form textarea,
+#feedback-form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
+}
 
-  #feedback-form button {
-    background-color: #4CAF50;
+#feedback-form button {
+    background-color: #4caf50;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
+}
 
-  #feedback-form button:hover {
+#feedback-form button:hover {
     background-color: #45a049;
-  }
+}
 
-  #feedback-form textarea {
+#feedback-form textarea {
     resize: vertical;
     min-height: 100px;
-  }
+}
+
+.form-footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.feedback-header {
+    text-align: center;
+}
+
+.feedback-header h1 {
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.feedback-header p {
+    color: #666;
+    font-size: 0.8rem;
+}
