@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Share your feedback on QSet."
+        />
+        <meta name="author" content="Ihenacho Henry, Fatogun Ibidapo" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Open Graph  -->
+        <meta property="og:title" content="QSet - Share Your Feedback" />
+        <meta
+            property="og:description"
+            content="Share your feedback on QSet."
+        />
+        <meta property="og:url" content="https://qballxi.com/feedback.html" />
+        <meta property="og:type" content="website" />
+
+        <title>QSet - Share Your Feedback</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <!-- Websense -->
+        <script
+            src="https://www.websense.online/cdn/websense.js"
+            defer
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="./email.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="nav-container">
+                <a class="logo" href="/">QSet</a>
+                <div class="nav-links">
+                    <a
+                        href="https://youtu.be/BddSKlv6bTo"
+                        class="nav-link primary"
+                        target="_blank"
+                        >Guide</a
+                    >
+                </div>
+            </div>
+
+            <form id="feedback-form">
+                <div class="feedback-header">
+                    <h1>Share Your Feedback</h1>
+                    <p>
+                        Help us improve QSet by sharing your thoughts and
+                        suggestions
+                    </p>
+                </div>
+
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                />
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="(Optional) Enter your email address"
+                />
+
+                <label for="message">Your Feedback</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Share your thoughts, suggestions, or report issues..."
+                    required
+                ></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+
+            <div class="form-footer">
+                Your feedback helps make QSet better for everyone. Thank you!
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    </body>
+</html>

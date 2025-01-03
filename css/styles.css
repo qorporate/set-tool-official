@@ -226,6 +226,12 @@ input[type="text"] {
     font-weight: bold;
 }
 
+/*
+  ========================================
+  UNDO / REDO
+  ========================================
+*/
+
 .undo-redo-buttons {
     display: flex;
     justify-content: center;
@@ -263,4 +269,130 @@ input[type="text"] {
     background-color: #f0f0f0;
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+/*
+  ========================================
+  NAVBAR
+  ========================================
+*/
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-container .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.nav-link.primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.nav-link.primary:hover {
+    background-color: #2980b9;
+}
+
+.nav-link.secondary {
+    background-color: #4caf50;
+    color: white;
+}
+
+.nav-link.secondary:hover {
+    background-color: #45a049;
+}
+
+/*
+  ========================================
+  FEEDBACK PAGE
+  ========================================
+*/
+
+#feedback-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    margin-top: 1rem;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#feedback-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#feedback-form input,
+#feedback-form textarea,
+#feedback-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#feedback-form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#feedback-form button:hover {
+    background-color: #45a049;
+}
+
+#feedback-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.feedback-header {
+    text-align: center;
+    margin-bottom: 0.9rem;
+}
+
+.feedback-header h1 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feedback-header p {
+    color: #666;
+    font-size: 0.8rem;
 }
