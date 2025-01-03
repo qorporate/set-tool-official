@@ -191,16 +191,16 @@ input[type="text"] {
     gap: 5px;
 }
 
-.move-button {
+/* .move-button {
     background-color: #607d8b;
     color: white;
     padding: 5px 10px;
     font-size: 14px;
-}
+} */
 
-.move-button:disabled {
+/* .move-button:disabled {
     background-color: #ccc;
-}
+} */
 
 .match-team-button {
     padding: 5px;
@@ -240,6 +240,7 @@ input[type="text"] {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    position: relative;
 }
 
 #undo-button {
@@ -258,9 +259,115 @@ input[type="text"] {
     background-color: #e27dc788;
 }
 
-#undo-button:disabled,
+/* #undo-button:disabled,
 #redo-button:disabled {
     background-color: #f0f0f0;
     opacity: 0.5;
     cursor: not-allowed;
+    pointer-events: none;
+} */
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .nav-container .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .breadcrumb {
+    display: flex;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: #555;
+    flex-direction: row;
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+    color: #007BFF;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb span {
+    color: #555;
+  }
+
+  .menu-button {
+    background-color: transparent;
+  }
+
+  .menu-button  .menu{
+    height: 20px;
+    width: 20px;
+  }
+
+  .menu-modal{
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    height: 400px;
+    background-color:rgb(22, 22, 22);
+    position:fixed;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    visibility: hidden;
+    border-radius: 20px;
+    translate: -40px 40px;
 }
+
+#feedback-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  #feedback-form h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  #feedback-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  #feedback-form input,
+  #feedback-form textarea,
+  #feedback-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  #feedback-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #feedback-form button:hover {
+    background-color: #45a049;
+  }
+
+  #feedback-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
