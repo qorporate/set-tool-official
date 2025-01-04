@@ -474,7 +474,8 @@ class GameManager {
     if (!waitingCount) {
       throw new Error("Uh oh! Can't get the waiting count element!");
     }
-    waitingCount.textContent = `(${this.queue.size()} waiting)`;
+    const queueSize = this.queue.size();
+    waitingCount.textContent = `(${queueSize === 1 ? "1 team" : queueSize + ` teams`})`;
   }
   setupNextMatch() {
     switch (this.currentState) {

@@ -20,12 +20,12 @@ export class GameManager {
         this.errorTimeout = null;
         this.currentState = GameState.WAITING_FOR_TEAMS;
         this.loadGameState();
-        
+
         // update undo stack after loading game state, to ensure current state
         // is captured correctly
         this.undoStack = [this.captureCurrentState()];
         this.redoStack = [];
-        
+
         this.initializeEventListeners();
         this.updateDisplay();
     }
@@ -571,7 +571,10 @@ export class GameManager {
             throw new Error("Uh oh! Can't get the waiting count element!");
         }
 
-        waitingCount.textContent = `(${this.queue.size()} waiting)`;
+        const queueSize = this.queue.size();
+        waitingCount.textContent = `(${
+            queueSize === 1 ? "1 team" : queueSize + ` teams`
+        })`;
     }
 
     /// Why do we set the currentStreak to 0 when adding new teams?
