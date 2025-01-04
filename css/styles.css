@@ -396,3 +396,13 @@ input[type="text"] {
     color: #666;
     font-size: 0.8rem;
 }
+
+#feedback-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    font-size: 1rem;
+}

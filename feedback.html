@@ -115,10 +115,8 @@
             <form id="feedback-form">
                 <div class="feedback-header">
                     <h1>Share Your Feedback</h1>
-                    <p>
-                        Help us improve QSet by sharing your thoughts and
-                        suggestions
-                    </p>
+                    <p>We're constantly looking to make QSet better for you.</p>
+                    <p>Your feedback matters!</p>
                 </div>
 
                 <label for="name">Name</label>
@@ -126,8 +124,7 @@
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Enter your name"
-                    required
+                    placeholder="(Optional) What's your name?"
                 />
 
                 <label for="email">Email</label>
@@ -135,8 +132,21 @@
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="(Optional) Enter your email address"
+                    placeholder="(Optional) Enter your email if you'd like us to reply."
                 />
+
+                <label for="category">Feedback Category</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>
+                        Select a category
+                    </option>
+                    <option value="feature-request">Feature Request</option>
+                    <option value="bug-report">Bug Report</option>
+                    <option value="general-suggestion">
+                        General Suggestion
+                    </option>
+                    <option value="other">Other</option>
+                </select>
 
                 <label for="message">Your Feedback</label>
                 <textarea
