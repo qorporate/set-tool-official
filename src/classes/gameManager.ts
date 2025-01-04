@@ -531,6 +531,12 @@ export class GameManager {
         this.queue.items.forEach((team, index) => {
             const li = document.createElement("li");
             li.className = "queue-item";
+
+            // Highlight the first team
+            if (index === 0) {
+                li.classList.add("next-up");
+            }
+
             li.innerHTML = `
             <span><b>${team.name}</b><br/><em>${this.formatTeamStats(
                 team

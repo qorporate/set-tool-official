@@ -191,6 +191,32 @@ input[type="text"] {
     gap: 5px;
 }
 
+/* Highlight the next team in queue */
+.next-up {
+    background-color: #dff0d8; /* Light green background */
+    border: 2px solid #4caf50; /* Green border */
+    font-weight: bold;
+    box-shadow: 0 0 5px #4caf50; /* Subtle glow effect */
+    animation: pulse 1.5s infinite; 
+    /* Optional: Add animation for attention */
+}
+
+/* Optional: Add a pulsing animation to highlight "Next Up" */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px #4caf50;
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 10px #4caf50;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px #4caf50;
+    }
+}
+
 .move-button {
     background-color: #607d8b;
     color: white;
@@ -213,6 +239,12 @@ input[type="text"] {
     background-color: #2196f3;
     color: white;
 }
+
+/*
+  ========================================
+  RESET
+  ========================================
+*/
 
 .reset {
     display: flex;
