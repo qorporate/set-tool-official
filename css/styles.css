@@ -57,7 +57,7 @@ em {
 }
 
 .team h2 {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .team .stats {
@@ -88,7 +88,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 0.8rem;
     transition: background-color 0.2s;
 }
 
@@ -308,52 +308,102 @@ input[type="text"] {
   NAVBAR
   ========================================
 */
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
+@media (min-width : 330px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .nav-container .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 0.75rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+    }
+    
+    .nav-link.primary {
+        background-color: #3498db;
+        color: white;
+    }
+    
+    .nav-link.primary:hover {
+        background-color: #2980b9;
+    }
+    
+    .nav-link.secondary {
+        background-color: #4caf50;
+        color: white;
+    }
+    
+    .nav-link.secondary:hover {
+        background-color: #45a049;
+    }
 }
 
-.nav-container .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-
-.nav-links {
-    display: flex;
-    gap: 0.75rem;
-}
-
-.nav-link {
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.875rem;
-    transition: all 0.2s ease;
-}
-
-.nav-link.primary {
-    background-color: #3498db;
-    color: white;
-}
-
-.nav-link.primary:hover {
-    background-color: #2980b9;
-}
-
-.nav-link.secondary {
-    background-color: #4caf50;
-    color: white;
-}
-
-.nav-link.secondary:hover {
-    background-color: #45a049;
+@media (max-width : 329px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .nav-container .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.6rem;
+        transition: all 0.2s ease;
+    }
+    
+    .nav-link.primary {
+        background-color: #3498db;
+        color: white;
+    }
+    
+    .nav-link.primary:hover {
+        background-color: #2980b9;
+    }
+    
+    .nav-link.secondary {
+        background-color: #4caf50;
+        color: white;
+    }
+    
+    .nav-link.secondary:hover {
+        background-color: #45a049;
+    }
 }
 
 /*
