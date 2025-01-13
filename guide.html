@@ -88,102 +88,136 @@
         </script>
     </head>
     <body>
-        <div class="guide-container">
-            <div class="page-header">
-                <h1>QSet Guide</h1>
-                <p>Learn how to manage your football sets efficiently</p>
-            </div>
-
-            <nav class="guide-nav">
-                <a href="#video-guide" class="guide-nav-button active"
-                    >Quick Video</a
-                >
-                <a href="#step-by-step" class="guide-nav-button"
-                    >Step-by-Step</a
-                >
-                <a href="#why-qset" class="guide-nav-button">Why QSet?</a>
-            </nav>
-
-            <!-- Video Guide Card -->
-            <div id="video-guide" class="card">
-                <h2 class="section-title">Quick Start Video</h2>
-                <div class="video-container">
-                    <img
-                        src="/api/placeholder/800/450"
-                        alt="Video guide placeholder"
-                    />
+        <div class="container">
+            <div class="nav-container">
+                <a class="logo" href="/">QSet</a>
+                <div class="nav-links">
+                    <a
+                        href="/feedback.html"
+                        class="nav-link secondary"
+                        target="_blank"
+                        >Feedback</a
+                    >
                 </div>
             </div>
 
-            <!-- Step by Step Card -->
-            <div id="step-by-step" class="card">
-                <h2 class="section-title">Step-by-Step Guide</h2>
-                <div class="demo-grid">
-                    <div class="demo-item">
-                        <h3 class="demo-title">1. Adding Teams</h3>
-                        <p class="demo-description">
-                            Type team names and use Add Team button to build
-                            your queue
-                        </p>
-                        <div class="gif-container">
-                            <img
-                                src="/api/placeholder/400/200"
-                                alt="Adding teams demo"
-                            />
-                        </div>
-                    </div>
+            <div class="guide-container">
+                <div class="page-header">
+                    <h2>QSet Guide</h2>
+                    <p>Learn how to use QSet to manage your football sessions</p>
+                </div>
 
-                    <div class="demo-item">
-                        <h3 class="demo-title">2. Starting Matches</h3>
-                        <p class="demo-description">
-                            Select teams to start a match and record results
-                        </p>
-                        <div class="gif-container">
-                            <img
-                                src="/api/placeholder/400/200"
-                                alt="Match management demo"
-                            />
-                        </div>
-                    </div>
+                <nav class="guide-nav">
+                    <button
+                        id="video-guide-button"
+                        class="guide-nav-button active"
+                        onclick="showSection('video-guide')"
+                    >
+                        Quick Video
+                    </button>
 
-                    <div class="demo-item">
-                        <h3 class="demo-title">3. Managing the Queue</h3>
-                        <p class="demo-description">
-                            Organize waiting teams and handle team rotations
-                        </p>
-                        <div class="gif-container">
-                            <img
-                                src="/api/placeholder/400/200"
-                                alt="Queue management demo"
-                            />
-                        </div>
-                    </div>
+                    <button
+                        id="step-by-step-button"
+                        class="guide-nav-button"
+                        onclick="showSection('step-by-step')"
+                    >
+                        Step-by-Step
+                    </button>
 
-                    <div class="demo-item">
-                        <h3 class="demo-title">4. Using Undo/Redo</h3>
-                        <p class="demo-description">
-                            Fix mistakes quickly with undo/redo functionality
-                        </p>
-                        <div class="gif-container">
-                            <img
-                                src="/api/placeholder/400/200"
-                                alt="Undo/Redo demo"
-                            />
+                    <button
+                        id="why-qset-button"
+                        class="guide-nav-button"
+                        onclick="showSection('why-qset')"
+                    >
+                        Why QSet?
+                    </button>
+                </nav>
+
+                <!-- Video Guide Card -->
+                <div id="video-guide" class="card">
+                    <h2 class="section-title">Quick Start Video</h2>
+                    <div class="video-container">
+                        <img
+                            src="/api/placeholder/800/450"
+                            alt="Video guide placeholder"
+                        />
+                    </div>
+                </div>
+
+                <!-- Step by Step Card -->
+                <div id="step-by-step" class="card">
+                    <h2 class="section-title">Step-by-Step Guide</h2>
+                    <div class="demo-grid">
+                        <div class="demo-item">
+                            <h3 class="demo-title">1. Adding Teams</h3>
+                            <p class="demo-description">
+                                Type team names and use Add Team button to build
+                                your queue
+                            </p>
+                            <div class="gif-container">
+                                <img
+                                    src="/api/placeholder/400/200"
+                                    alt="Adding teams demo"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">2. Starting Matches</h3>
+                            <p class="demo-description">
+                                Select teams to start a match and record results
+                            </p>
+                            <div class="gif-container">
+                                <img
+                                    src="/api/placeholder/400/200"
+                                    alt="Match management demo"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">3. Managing the Queue</h3>
+                            <p class="demo-description">
+                                Organize waiting teams and handle team rotations
+                            </p>
+                            <div class="gif-container">
+                                <img
+                                    src="/api/placeholder/400/200"
+                                    alt="Queue management demo"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">4. Using Undo/Redo</h3>
+                            <p class="demo-description">
+                                Fix mistakes quickly with undo/redo
+                                functionality
+                            </p>
+                            <div class="gif-container">
+                                <img
+                                    src="/api/placeholder/400/200"
+                                    alt="Undo/Redo demo"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Why QSet Card -->
-            <div id="why-qset" class="card">
-                <h2 class="section-title">Why QSet?</h2>
-                <div class="feature-list">
-                    <li>
-                        🎮 Easy management of football sets and team rotations
-                    </li>
-                    <li>⚡ Quick team switching and match recording</li>
-                    <li>🔄 Undo/redo support for mistake-free management</li>
-                    <li>📱 Simple, mobile-friendly interface</li>
+                <!-- Why QSet Card -->
+                <div id="why-qset" class="card">
+                    <h2 class="section-title">Why QSet?</h2>
+                    <div class="feature-list">
+                        <li>
+                            🎮 Easy management of football sets and team
+                            rotations
+                        </li>
+                        <li>⚡ Quick team switching and match recording</li>
+                        <li>
+                            🔄 Undo/redo support for mistake-free management
+                        </li>
+                        <li>📱 Simple, mobile-friendly interface</li>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,6 +232,32 @@
                         .forEach((btn) => btn.classList.remove("active"));
                     button.classList.add("active");
                 });
+            });
+
+            // show or hide sections
+            function showSection(sectionId) {
+                // Hide all sections
+                document.querySelectorAll(".card").forEach((section) => {
+                    section.style.display = "none";
+                });
+
+                // Remove active class from all buttons
+                document
+                    .querySelectorAll(".guide-nav-button")
+                    .forEach((button) => {
+                        button.classList.remove("active");
+                    });
+
+                // Show the selected section
+                document.getElementById(sectionId).style.display = "block";
+
+                // Add active class to the clicked button
+                document.getElementById(`${sectionId}-button`).classList.add("active");
+            }
+
+            // Show the first section by default
+            document.addEventListener("DOMContentLoaded", () => {
+                showSection("video-guide");
             });
         </script>
     </body>
