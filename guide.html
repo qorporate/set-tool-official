@@ -104,7 +104,9 @@
             <div class="guide-container">
                 <div class="page-header">
                     <h2>QSet Guide</h2>
-                    <p>Learn how to use QSet to manage your football sessions</p>
+                    <p>
+                        Learn how to use QSet to manage your football sessions
+                    </p>
                 </div>
 
                 <nav class="guide-nav">
@@ -137,10 +139,16 @@
                 <div id="video-guide" class="card">
                     <h2 class="section-title">Quick Start Video</h2>
                     <div class="video-container">
-                        <img
-                            src="/api/placeholder/800/450"
-                            alt="Video guide placeholder"
-                        />
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/BddSKlv6bTo?si=NEnG_Vimd_ZdkGu8"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
                     </div>
                 </div>
 
@@ -252,7 +260,9 @@
                 document.getElementById(sectionId).style.display = "block";
 
                 // Add active class to the clicked button
-                document.getElementById(`${sectionId}-button`).classList.add("active");
+                document
+                    .getElementById(`${sectionId}-button`)
+                    .classList.add("active");
             }
 
             // Show the first section by default
