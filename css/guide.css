@@ -140,3 +140,19 @@ body {
 .feature-list li:not(:last-child) {
     border-bottom: 1px solid #eee;
 }
+
+.gif-container {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Adjust max-width based on your layout */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.responsive-gif {
+    width: 100%;
+    height: auto; /* Keeps the aspect ratio intact */
+    object-fit: contain;
+}
