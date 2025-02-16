@@ -124,6 +124,7 @@ body {
     color: #666;
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    line-height: 1.2rem;
 }
 
 .feature-list {
@@ -155,4 +156,8 @@ body {
     width: 100%;
     height: auto; /* Keeps the aspect ratio intact */
     object-fit: contain;
+}
+
+#why-qset {
+    line-height: 1.5rem;
 }
