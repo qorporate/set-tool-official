@@ -1,31 +1,7 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
+    max-width: 500px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f0f0f0;
-}
-
-h1 {
-    font-size: 1.9rem;
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 8px 0;
-}
-
-em {
-    font-style: italic;
-    font-weight: bold;
 }
 
 .container {
@@ -83,20 +59,6 @@ em {
     margin: 20px 0;
 }
 
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: background-color 0.2s;
-}
-
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
 .win-1 {
     background-color: #4caf50;
     color: white;
@@ -109,10 +71,6 @@ button:disabled {
 .win-2 {
     background-color: #2196f3;
     color: white;
-}
-
-button:hover:not(:disabled) {
-    opacity: 0.9;
 }
 
 .queue-display {
@@ -197,7 +155,7 @@ input[type="text"] {
     border: 2px solid #4caf50; /* Green border */
     font-weight: bold;
     box-shadow: 0 0 5px #4caf50; /* Subtle glow effect */
-    animation: pulse 1.5s infinite; 
+    animation: pulse 1.5s infinite;
     /* Optional: Add animation for attention */
 }
 
@@ -301,190 +259,4 @@ input[type="text"] {
     background-color: #f0f0f0;
     opacity: 0.5;
     cursor: not-allowed;
-}
-
-/*
-  ========================================
-  NAVBAR
-  ========================================
-*/
-@media (min-width : 330px) {
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.75rem 1rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #ddd;
-    }
-    
-    .nav-container .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-decoration: none;
-        color: black;
-    }
-    
-    .nav-links {
-        display: flex;
-        gap: 0.75rem;
-    }
-    
-    .nav-link {
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-size: 0.875rem;
-        transition: all 0.2s ease;
-    }
-    
-    .nav-link.primary {
-        background-color: #3498db;
-        color: white;
-    }
-    
-    .nav-link.primary:hover {
-        background-color: #2980b9;
-    }
-    
-    .nav-link.secondary {
-        background-color: #4caf50;
-        color: white;
-    }
-    
-    .nav-link.secondary:hover {
-        background-color: #45a049;
-    }
-}
-
-@media (max-width : 329px) {
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.75rem 1rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #ddd;
-    }
-    
-    .nav-container .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-decoration: none;
-        color: black;
-    }
-    
-    .nav-links {
-        display: flex;
-        gap: 0.5rem;
-    }
-    
-    .nav-link {
-        padding: 0.3rem 0.8rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-size: 0.6rem;
-        transition: all 0.2s ease;
-    }
-    
-    .nav-link.primary {
-        background-color: #3498db;
-        color: white;
-    }
-    
-    .nav-link.primary:hover {
-        background-color: #2980b9;
-    }
-    
-    .nav-link.secondary {
-        background-color: #4caf50;
-        color: white;
-    }
-    
-    .nav-link.secondary:hover {
-        background-color: #45a049;
-    }
-}
-
-/*
-  ========================================
-  FEEDBACK PAGE
-  ========================================
-*/
-
-#feedback-form {
-    max-width: 400px;
-    margin: 2rem auto;
-    margin-top: 1rem;
-    background: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#feedback-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#feedback-form input,
-#feedback-form textarea,
-#feedback-form button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#feedback-form button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#feedback-form button:hover {
-    background-color: #45a049;
-}
-
-#feedback-form textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.form-footer {
-    margin-top: 1rem;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-.feedback-header {
-    text-align: center;
-    margin-bottom: 0.9rem;
-}
-
-.feedback-header h1 {
-    color: #333;
-    font-size: 1.8rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.feedback-header p {
-    color: #666;
-    font-size: 0.8rem;
-}
-
-#feedback-form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: white;
-    font-size: 1rem;
 }

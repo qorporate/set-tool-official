@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Learn to use QSet." />
+        <meta name="author" content="Ihenacho Henry, Fatogun Ibidapo" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Open Graph  -->
+        <meta property="og:title" content="QSet - Guide" />
+        <meta property="og:description" content="Learn to use QSet." />
+        <meta property="og:url" content="https://qballxi.com/feedback.html" />
+        <meta property="og:type" content="website" />
+
+        <title>QSet - Guide</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/guide.css" />
+
+        <!-- Posthog -->
+        <script>
+            !(function (t, e) {
+                var o, n, p, r;
+                e.__SV ||
+                    ((window.posthog = e),
+                    (e._i = []),
+                    (e.init = function (i, s, a) {
+                        function g(t, e) {
+                            var o = e.split(".");
+                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                                (t[e] = function () {
+                                    t.push(
+                                        [e].concat(
+                                            Array.prototype.slice.call(
+                                                arguments,
+                                                0
+                                            )
+                                        )
+                                    );
+                                });
+                        }
+                        ((p = t.createElement("script")).type =
+                            "text/javascript"),
+                            (p.crossOrigin = "anonymous"),
+                            (p.async = !0),
+                            (p.src =
+                                s.api_host.replace(
+                                    ".i.posthog.com",
+                                    "-assets.i.posthog.com"
+                                ) + "/static/array.js"),
+                            (r =
+                                t.getElementsByTagName(
+                                    "script"
+                                )[0]).parentNode.insertBefore(p, r);
+                        var u = e;
+                        for (
+                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                                u.people = u.people || [],
+                                u.toString = function (t) {
+                                    var e = "posthog";
+                                    return (
+                                        "posthog" !== a && (e += "." + a),
+                                        t || (e += " (stub)"),
+                                        e
+                                    );
+                                },
+                                u.people.toString = function () {
+                                    return u.toString(1) + ".people (stub)";
+                                },
+                                o =
+                                    "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(
+                                        " "
+                                    ),
+                                n = 0;
+                            n < o.length;
+                            n++
+                        )
+                            g(u, o[n]);
+                        e._i.push([i, s, a]);
+                    }),
+                    (e.__SV = 1));
+            })(document, window.posthog || []);
+            posthog.init("phc_LhQCeUx9IuQYYxJ5W8wtTI4BzUVHNuDlq9V2DKlrSRZ", {
+                api_host: "https://us.i.posthog.com",
+                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="nav-container">
+                <a class="logo" href="/">QSet</a>
+                <div class="nav-links">
+                    <a
+                        href="/feedback.html"
+                        class="nav-link secondary"
+                        target="_blank"
+                        >Feedback</a
+                    >
+                </div>
+            </div>
+
+            <div class="guide-container">
+                <div class="page-header">
+                    <h2>QSet Guide</h2>
+                    <p>
+                        Learn how to use QSet to manage your football sessions
+                    </p>
+                </div>
+
+                <nav class="guide-nav">
+                    <button
+                        id="video-guide-button"
+                        class="guide-nav-button active"
+                        onclick="showSection('video-guide')"
+                    >
+                        Quick Video
+                    </button>
+
+                    <button
+                        id="step-by-step-button"
+                        class="guide-nav-button"
+                        onclick="showSection('step-by-step')"
+                    >
+                        Step-by-Step
+                    </button>
+
+                    <button
+                        id="why-qset-button"
+                        class="guide-nav-button"
+                        onclick="showSection('why-qset')"
+                    >
+                        Why QSet?
+                    </button>
+                </nav>
+
+                <!-- Video Guide Card -->
+                <div id="video-guide" class="card">
+                    <h2 class="section-title">Quick Start Video</h2>
+                    <div class="video-container">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/BddSKlv6bTo?si=NEnG_Vimd_ZdkGu8"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+
+                <!-- Step by Step Card -->
+                <div id="step-by-step" class="card">
+                    <h2 class="section-title">Step-by-Step Guide</h2>
+                    <div class="demo-grid">
+                        <div class="demo-item">
+                            <h3 class="demo-title">1. Adding Teams</h3>
+                            <p class="demo-description">
+                                Type team names and use Add Team button to build
+                                your queue
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="./assets/mp4/1-add-team.mp4"
+                                    alt="Add teams On QSet"
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">2. Edit Teams</h3>
+                            <p class="demo-description">
+                                Click the pencil button to change the names of
+                                teams in your session.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="./assets/mp4/2-edit-team.mp4"
+                                    alt="Edit teams On QSet"
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">3. Removing Teams</h3>
+                            <p class="demo-description">
+                                Click the trash button to remove a team from the
+                                session.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="./assets/mp4/3-remove-team.mp4"
+                                    alt="Remove teams from QSet"
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">4. Team Wins</h3>
+                            <p class="demo-description">
+                                Record a win for a team by tapping the button
+                                with their name on it.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="/assets/mp4/4-team-wins.mp4"
+                                    alt="Record a win for a team by tapping the button with their name on it."
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                            <br />
+                            <p class="demo-description">
+                                If there are teams in the queue, the losing team
+                                will be swapped with the first team in line.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="/assets/mp4/5-team-wins-with-queue.mp4"
+                                    alt=" If there are teams in the queue, the losing team
+                                will be swapped with the first team in line."
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">5. Teams Draw</h3>
+                            <p class="demo-description">
+                                Click the draw button to record a draw for both
+                                teams in the match. When teams draw, they are
+                                both swapped out for the first two teams in the
+                                queue.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="/assets/mp4/6-teams-draw.mp4"
+                                    alt="Teams that draw are swapped out for the first two teams in the queue."
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                            <br />
+                            <p class="demo-description">
+                                <em>Note:</em> The draw button only appears when
+                                there are 2 or more teams in the queue.
+                            </p>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">
+                                6. Reorder teams in the queue
+                            </h3>
+                            <p class="demo-description">
+                                Click the up and down arrows to move teams
+                                around in the queue. The first team in the queue
+                                is the team that will play next.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="/assets/mp4/7-move-team-in-queue.mp4"
+                                    alt="Reorder teams in the queue"
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">
+                                7. Swap teams out of the match
+                            </h3>
+                            <p class="demo-description">
+                                Click the swap button to swap a team out of the
+                                match. The team will be replaced by the first
+                                team in the queue.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="/assets/mp4/8-swap-teams-out.mp4"
+                                    alt="Swap teams out of the match"
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">
+                                8. Use undo/redo to fix mistakes
+                            </h3>
+                            <p class="demo-description">
+                                Click the undo and redo buttons to undo or redo
+                                actions in your session and fix mistakes.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="/assets/mp4/9-undo-redo.mp4"
+                                    alt="Use undo/redo to fix mistakes"
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                        </div>
+
+                        <div class="demo-item">
+                            <h3 class="demo-title">9. Reset the session</h3>
+                            <p class="demo-description">
+                                Click the reset button to clear the session and
+                                start afresh. Note that this action cannot be
+                                undone.
+                            </p>
+                            <div class="gif-container">
+                                <video
+                                    class="responsive-gif"
+                                    src="/assets/mp4/10-reset-game.mp4"
+                                    alt="Use the reset button to clear the session and start afresh."
+                                    autoplay
+                                    loop
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why QSet Card -->
+                <div id="why-qset" class="card">
+                    <h2 class="section-title">Why QSet?</h2>
+                    <div class="feature-list">
+                        <li>
+                            🎮 Easy management of football sets and team
+                            rotations
+                        </li>
+                        <li>⚡ Quick team switching and match recording</li>
+                        <li>
+                            🔄 Undo/redo support for mistake-free management
+                        </li>
+                        <li>📱 Simple, mobile-friendly interface</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Add smooth scrolling behavior
+            document.querySelectorAll(".guide-nav-button").forEach((button) => {
+                button.addEventListener("click", (e) => {
+                    // Update active state
+                    document
+                        .querySelectorAll(".guide-nav-button")
+                        .forEach((btn) => btn.classList.remove("active"));
+                    button.classList.add("active");
+                });
+            });
+
+            // show or hide sections
+            function showSection(sectionId) {
+                // Hide all sections
+                document.querySelectorAll(".card").forEach((section) => {
+                    section.style.display = "none";
+                });
+
+                // Remove active class from all buttons
+                document
+                    .querySelectorAll(".guide-nav-button")
+                    .forEach((button) => {
+                        button.classList.remove("active");
+                    });
+
+                // Show the selected section
+                document.getElementById(sectionId).style.display = "block";
+
+                // Add active class to the clicked button
+                document
+                    .getElementById(`${sectionId}-button`)
+                    .classList.add("active");
+            }
+
+            // Show the first section by default
+            document.addEventListener("DOMContentLoaded", () => {
+                showSection("video-guide");
+            });
+        </script>
+    </body>
+</html>
