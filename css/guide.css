@@ -157,7 +157,3 @@ body {
     height: auto; /* Keeps the aspect ratio intact */
     object-fit: contain;
 }
-
-#why-qset {
-    line-height: 1.5rem;
-}
